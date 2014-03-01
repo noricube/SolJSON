@@ -119,52 +119,52 @@ JSON문자열을 객체로
 
 JSON Object를 사용해서 동적 JSON 파싱
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SolJSONExample
-{
-    class Person
-    {
-        public string Name { get; set; }
-        public int Age { get; set; }
-    }
-
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // 단일 객체 동적 파싱
-            {
-                string person_info_str = "{\"Name\":\"홍길동\", \"Age\": 13}";
-                SolJSON.Types.JsonObject person_info_json_object = SolJSON.Convert.JsonConverter.ToJsonObject(person_info_str);
-                
-                if ( person_info_json_object.Type == SolJSON.Types.JsonObject.TYPE.DICTONARY )
-                {
-                    if ( person_info_json_object.AsDictonary.Contains("Name") )
-                    {
-                        Console.WriteLine("Name = " + person_info_json_object.AsDictonary["Name"].AsString);
-                    }
-                }
-            }
-
-            // 배열 동적 파싱
-            {
-                string person_infos_str = "[{\"Name\":\"홍길동\", \"Age\": 13},{\"Name\":\"영희\", \"Age\": 20}]";
-                SolJSON.Types.JsonObject person_infos_json_object = SolJSON.Convert.JsonConverter.ToJsonObject(person_infos_str);
-                
-                foreach (var person_info in person_infos_json_object.AsArray)
-                {
-                    Console.WriteLine("Name = " + person_info.AsDictonary["Name"].AsString);
-                    Console.WriteLine("Age = " + person_info.AsDictonary["Age"].AsNumber.IntValue);
-                }
-            }
-        }
-    }
-}
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
+	
+	namespace SolJSONExample
+	{
+	    class Person
+	    {
+	        public string Name { get; set; }
+	        public int Age { get; set; }
+	    }
+	
+	    class Program
+	    {
+	        static void Main(string[] args)
+	        {
+	            // 단일 객체 동적 파싱
+	            {
+	                string person_info_str = "{\"Name\":\"홍길동\", \"Age\": 13}";
+	                SolJSON.Types.JsonObject person_info_json_object = SolJSON.Convert.JsonConverter.ToJsonObject(person_info_str);
+	                
+	                if ( person_info_json_object.Type == SolJSON.Types.JsonObject.TYPE.DICTONARY )
+	                {
+	                    if ( person_info_json_object.AsDictonary.Contains("Name") )
+	                    {
+	                        Console.WriteLine("Name = " + person_info_json_object.AsDictonary["Name"].AsString);
+	                    }
+	                }
+	            }
+	
+	            // 배열 동적 파싱
+	            {
+	                string person_infos_str = "[{\"Name\":\"홍길동\", \"Age\": 13},{\"Name\":\"영희\", \"Age\": 20}]";
+	                SolJSON.Types.JsonObject person_infos_json_object = SolJSON.Convert.JsonConverter.ToJsonObject(person_infos_str);
+	                
+	                foreach (var person_info in person_infos_json_object.AsArray)
+	                {
+	                    Console.WriteLine("Name = " + person_info.AsDictonary["Name"].AsString);
+	                    Console.WriteLine("Age = " + person_info.AsDictonary["Age"].AsNumber.IntValue);
+	                }
+	            }
+	        }
+	    }
+	}
 
 JSON Object를 사용해서 동적 JSON 생성
 
