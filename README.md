@@ -1,13 +1,13 @@
 SolJSON
 ==========
 
-Unity3D를 위한 가벼운 JSON 라이브러리
+C# 에서 가볍게 작동하는 JSON 라이브러리 (for Unity3D)
 
 
 특징
 ----------
 
-* Unity3D 완벽 호환
+* Unity3D(Mono) 완벽 호환
 * 1500줄 정도의 적은 코드
 * Object Mapping
 * JsonObject를 통한 JSON String 생성
@@ -17,6 +17,7 @@ Unity3D를 위한 가벼운 JSON 라이브러리
 
 코드를 모두 다운 받은뒤에 Unity3D 프로젝트에 Assets폴더에 넣고 사용하시면 됩니다.
 Object의 Property만 인식하게 되어 있습니다.
+
 
 예제
 ----------
