@@ -50,7 +50,7 @@ namespace SolJSON.Convert.Helper
                 {
                     char character = json_string[pos];
 
-                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r')
+                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r' || character == '\n')
                     {
                         pos++;
                         continue;
@@ -84,7 +84,7 @@ namespace SolJSON.Convert.Helper
                 {
                     char character = json_string[pos];
 
-                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r')
+                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r' || character == '\n')
                     {
                         pos++;
                         continue;
@@ -195,7 +195,7 @@ namespace SolJSON.Convert.Helper
                 {
                     char character = json_string[pos];
 
-                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r')
+                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r' || character == '\n')
                     {
                         pos++;
                         continue;
@@ -218,7 +218,7 @@ namespace SolJSON.Convert.Helper
                 {
                     char character = json_string[pos];
 
-                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r')
+                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r' || character == '\n')
                     {
                         pos++;
                         continue;
@@ -251,7 +251,7 @@ namespace SolJSON.Convert.Helper
                 {
                     char character = json_string[pos];
 
-                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r')
+                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r' || character == '\n')
                     {
                         pos++;
                         continue;
@@ -270,7 +270,7 @@ namespace SolJSON.Convert.Helper
                 {
                     char character = json_string[pos];
 
-                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r')
+                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r' || character == '\n')
                     {
                         pos++;
                         continue;
@@ -378,7 +378,7 @@ namespace SolJSON.Convert.Helper
                 {
                     char character = json_string[pos];
 
-                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r')
+                    if (character == ' ' || character == '\t' || character == '\f' || character == '\r' || character == '\n')
                     {
                         pos++;
                         continue;
