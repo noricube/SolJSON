@@ -20,6 +20,8 @@ namespace SolJSON.Convert.Helper
             }
 
             Type type = obj.GetType();
+            bool isStruct = type.IsValueType && !type.IsEnum;
+
             if (type == typeof(int))
             {
                 return new Types.JsonNumber((int)obj);
@@ -76,7 +78,7 @@ namespace SolJSON.Convert.Helper
 
                 return to_dict;
             }
-            else if (type.IsClass == true)
+            else if (type.IsClass == true || isStruct)
             {
                 var from_dict = obj;
                 var target_dict = new Types.JsonDictonary();
