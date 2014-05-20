@@ -71,6 +71,10 @@ namespace SolJSON.Convert.Helper
                 {
                     return (object)(obj.AsString.Raw);
                 }
+                else if (obj.Type == Types.JsonObject.TYPE.BOOL)
+                {
+                    return (object)(obj.AsBool.Value);
+                }
                 else
                 {
                     throw new Exception("unmathced object type");
