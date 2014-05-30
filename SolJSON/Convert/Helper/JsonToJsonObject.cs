@@ -427,7 +427,11 @@ namespace SolJSON.Convert.Helper
                 {
                     char character = json_string[pos];
 
-                    if ((character >= '0' && character <= '9') || character == '-' || character == '.') // number
+                    if ((character >= '0' && character <= '9') 
+                        || character == '-' 
+                        || character == '.' 
+                        || character == 'E'
+                        || character == 'e') // number
                     {
                         pos++;
                         continue;
