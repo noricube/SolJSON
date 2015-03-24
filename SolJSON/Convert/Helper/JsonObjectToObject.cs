@@ -88,10 +88,13 @@ namespace SolJSON.Convert.Helper
                 var from_array = obj as Types.JsonArray;
                 IList to_array = (IList)Activator.CreateInstance(type);
 
-                foreach (var value in from_array)
-                {
-                    to_array.Add(Convert(sub_types[0], value));
-                }
+								if (from_array == null)
+								{
+	                foreach (var value in from_array)
+	                {
+	                    to_array.Add(Convert(sub_types[0], value));
+	                }
+								}
                 return to_array;
             }
             else if (typeof(IDictionary).IsAssignableFrom(type) == true)
