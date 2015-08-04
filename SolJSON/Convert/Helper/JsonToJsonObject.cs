@@ -390,11 +390,14 @@ namespace SolJSON.Convert.Helper
                         pos++;
                         continue;
                     }
-
-                    if (character == '}')
+                    else if (character == '}')
                     {
                         state_stack.Pop();
                         continue;
+                    }
+                    else
+                    {
+                        throw new ArgumentException("cannot found next dictonary element.");
                     }
                 }
                 else if (peek == STATE.STRING)
