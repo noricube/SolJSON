@@ -88,9 +88,12 @@ namespace SolJSON.Convert.Helper
                 var from_array = obj as Types.JsonArray;
                 IList to_array = (IList)Activator.CreateInstance(type);
 
-                foreach (var value in from_array)
+                if (from_array != null)
                 {
-                    to_array.Add(Convert(sub_types[0], value));
+                  foreach (var value in from_array)
+                  {
+                      to_array.Add(Convert(sub_types[0], value));
+                  }
                 }
                 return to_array;
             }
@@ -102,15 +105,18 @@ namespace SolJSON.Convert.Helper
                 var from_dict = obj as Types.JsonDictonary;
                 IDictionary to_dict = (IDictionary)Activator.CreateInstance(type);
 
-                foreach (var value in from_dict)
+                if (from_dict != null)
                 {
-                    object key = value.Key;
-                    if (sub_types[0].Equals(typeof(int)))
-                    {
-                        key = System.Convert.ToInt32(key);
-                    }
-
-                    to_dict.Add(key, Convert(sub_types[1], value.Value));
+                  foreach (var value in from_dict)
+                  {
+                      object key = value.Key;
+                      if (sub_types[0].Equals(typeof(int)))
+                      {
+                          key = System.Convert.ToInt32(key);
+                      }
+  
+                      to_dict.Add(key, Convert(sub_types[1], value.Value));
+                  }
                 }
                 return to_dict;
             }
